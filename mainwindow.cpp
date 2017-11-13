@@ -3,6 +3,16 @@
 
 #include <iostream>
 
+#include <QFileDialog>
+#include <QDir>
+#include <QSqlError>
+#include <QDebug>
+#include <QSqlTableModel>
+
+#include <memory>
+
+#include "viewoptions.hh"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -18,5 +28,27 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_action_Open_Database_triggered()
 {
-    std::cerr << "Hi there!\n";
+    auto DB_name = QFileDialog::getOpenFileName(this, tr("New Dfatabase Name"),
+                                                QDir::homePath(),
+                                                tr("Databases (*.db)"));
+
+    auto db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(DB_name);
+}
+
+void MainWindow::on_action_New_Database_triggered()
+{
+    auto DB_name = QFileDialog::getSaveFileName(this, tr("New Database Name"),
+                                                QDir::homePath(),
+                                                tr("Databases (*.db)"));
+
+    auto db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(DB_name);
+}
+
+
+void MainWindow::on_actionEdit_Options_triggered()
+{
+    auto options = new ViewOptions(this);
+    options->exec();
 }

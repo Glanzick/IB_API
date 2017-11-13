@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>540</width>
-    <height>353</height>
+    <width>1250</width>
+    <height>764</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>540</width>
-     <height>30</height>
+     <width>1250</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="defaultUp">
@@ -30,9 +30,27 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
+    <addaction name="action_New_Database"/>
+    <addaction name="action_Save_Database"/>
     <addaction name="action_Open_Database"/>
+    <addaction name="separator"/>
+    <addaction name="action_quit"/>
+   </widget>
+   <widget class="QMenu" name="menuPositions">
+    <property name="title">
+     <string>Positio&amp;ns</string>
+    </property>
+    <addaction name="actionEdit_Options"/>
+   </widget>
+   <widget class="QMenu" name="menuIB">
+    <property name="title">
+     <string>&amp;IB</string>
+    </property>
+    <addaction name="action_Connect"/>
    </widget>
    <addaction name="menu_File"/>
+   <addaction name="menuPositions"/>
+   <addaction name="menuIB"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -51,8 +69,62 @@
     <string>Ctrl+O</string>
    </property>
   </action>
+  <action name="action_New_Database">
+   <property name="text">
+    <string>&amp;New Database</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="action_Save_Database">
+   <property name="text">
+    <string>&amp;Save Database</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_quit">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionEdit_Options">
+   <property name="text">
+    <string>Edit &amp;Options</string>
+   </property>
+  </action>
+  <action name="action_Connect">
+   <property name="text">
+    <string>&amp;Connect</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>action_quit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>624</x>
+     <y>381</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

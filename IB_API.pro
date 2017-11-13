@@ -25,16 +25,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    viewoptions.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    viewoptions.hh
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    viewoptions.ui
 
-unix: LIBS += -ltwsapi -ltwsapi_ssl
-unix: LIBS += -L/usr/lib/openssl-1.0/ -lssl -lcrypto
+#unix: LIBS += -ltwsapi -ltwsapi_ssl
+#unix: LIBS += -L/usr/lib/openssl-1.0/ -lssl -lcrypto
 
-INCLUDEPATH += /usr/include/openssl-1.0
-DEPENDPATH += /usr/include/openssl-1.0
+#INCLUDEPATH += /usr/include/openssl-1.0
+#DEPENDPATH += /usr/include/openssl-1.0

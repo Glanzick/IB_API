@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QSqlDatabase>
+
+#include <memory>
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +20,10 @@ public:
 
 private slots:
     void on_action_Open_Database_triggered();
+
+    void on_action_New_Database_triggered();
+
+    void on_actionEdit_Options_triggered();
 
 private:
     Ui::MainWindow *ui;
