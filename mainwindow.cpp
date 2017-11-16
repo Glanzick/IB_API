@@ -28,12 +28,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_action_Open_Database_triggered()
 {
-    auto DB_name = QFileDialog::getOpenFileName(this, tr("New Dfatabase Name"),
+    auto DB_name = QFileDialog::getOpenFileName(this, tr("Open Database Name"),
                                                 QDir::homePath(),
                                                 tr("Databases (*.db)"));
 
     auto db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(DB_name);
+
+    b_positions.load_positions_from_sql();
 }
 
 void MainWindow::on_action_New_Database_triggered()
@@ -51,4 +53,16 @@ void MainWindow::on_actionEdit_Options_triggered()
 {
     auto options = new ViewOptions(this);
     options->exec();
+}
+
+void MainWindow::on_action_Save_Database_triggered()
+{
+    b_positions.save_positions_to_sql();
+}
+
+void MainWindow::on_actionAdd_Positions_triggered()
+{
+    auto window = new AddPosition(&b_positions);
+    window->setAttribute(Qt::WA_DeleteOnClose);
+    window->show();
 }

@@ -26,15 +26,22 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    viewoptions.cpp
+    viewoptions.cpp \
+    positions.cpp \
+    options.cpp \
+    addposition.cpp
 
 HEADERS += \
         mainwindow.h \
-    viewoptions.hh
+    viewoptions.hh \
+    positions.h \
+    options.h \
+    addposition.h
 
 FORMS += \
         mainwindow.ui \
-    viewoptions.ui
+    viewoptions.ui \
+    addposition.ui
 
 #unix: LIBS += -ltwsapi -ltwsapi_ssl
 #unix: LIBS += -L/usr/lib/openssl-1.0/ -lssl -lcrypto

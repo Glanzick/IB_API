@@ -20,7 +20,7 @@
      <x>0</x>
      <y>0</y>
      <width>1250</width>
-     <height>20</height>
+     <height>30</height>
     </rect>
    </property>
    <property name="defaultUp">
@@ -41,6 +41,7 @@
      <string>Positio&amp;ns</string>
     </property>
     <addaction name="actionEdit_Options"/>
+    <addaction name="actionAdd_Positions"/>
    </widget>
    <widget class="QMenu" name="menuIB">
     <property name="title">
@@ -104,6 +105,11 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+C</string>
+   </property>
+  </action>
+  <action name="actionAdd_Positions">
+   <property name="text">
+    <string>Add Positions</string>
    </property>
   </action>
  </widget>
