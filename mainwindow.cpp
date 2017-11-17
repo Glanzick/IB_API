@@ -28,6 +28,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_action_Open_Database_triggered()
 {
+    // Clear out current positions:
+    b_positions.clear();
+
     auto DB_name = QFileDialog::getOpenFileName(this, tr("Open Database Name"),
                                                 QDir::homePath(),
                                                 tr("Databases (*.db)"));
@@ -40,6 +43,8 @@ void MainWindow::on_action_Open_Database_triggered()
 
 void MainWindow::on_action_New_Database_triggered()
 {
+    b_positions.clear();
+
     auto DB_name = QFileDialog::getSaveFileName(this, tr("New Database Name"),
                                                 QDir::homePath(),
                                                 tr("Databases (*.db)"));

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>555</width>
-    <height>487</height>
+    <width>265</width>
+    <height>392</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -91,7 +91,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="tab">
+  <widget class="QWidget" name="tab2">
    <attribute name="title">
     <string>Tab 2</string>
    </attribute>

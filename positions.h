@@ -9,6 +9,7 @@ class Positions
 {
 public:
     Positions();
+    void clear() {b_options.clear();}
 
     void load_positions_from_sql();
     void save_positions_to_sql();

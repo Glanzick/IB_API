@@ -20,7 +20,7 @@ AddPosition::~AddPosition()
 void AddPosition::on_pushButton_clicked()
 {
     // Determine the next position id:
-    auto id = b_positions->num_options();
+    auto id = b_positions->num_options() + 1; // SQLITE starts at 1.
 
     // Create option based on user values.
     Options opt;
@@ -31,4 +31,6 @@ void AddPosition::on_pushButton_clicked()
     opt.set_expiry(ui->dateEdit->date());
     opt.mark_modified();
     b_positions->add_option(std::move(opt));
+
+    close();
 }
